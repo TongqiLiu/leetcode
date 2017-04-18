@@ -5,7 +5,7 @@ import java.util.HashMap;
  * Email: tongqicode@126.com
  */
 
-//解题思路：双指针去记录当下所模拟的子串的首尾，注意判断当前字符到底是属于上个模拟的子串还是当下所模拟的子串，复杂度O(N)
+//瑙ｉ鎬濊矾锛氬弻鎸囬拡鍘昏褰曞綋涓嬫墍妯℃嫙鐨勫瓙涓茬殑棣栧熬锛屾敞鎰忓垽鏂綋鍓嶅瓧绗﹀埌搴曟槸灞炰簬涓婁釜妯℃嫙鐨勫瓙涓茶繕鏄綋涓嬫墍妯℃嫙鐨勫瓙涓诧紝澶嶆潅搴(N)
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
