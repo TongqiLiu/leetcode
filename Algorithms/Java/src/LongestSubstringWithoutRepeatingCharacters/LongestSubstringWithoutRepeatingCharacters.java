@@ -9,10 +9,10 @@ import java.util.HashMap;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> hashMap = new HashMap<>();
 
-        //int l = 0, r = 0, ans = 0, len = 0;
+        int l = 0, r = 0, ans = 0, len = 0;
         for (int i = 0; i < s.length(); i++) {
             if (!hashMap.containsKey(s.charAt(i)) || hashMap.get(s.charAt(i)) < l) {
                 r++;
