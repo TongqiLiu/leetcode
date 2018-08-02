@@ -7,6 +7,7 @@
 //     也可以从双指针中间向两边扩展，后缀数组，KMP马拉车算法也都可以解决这个问题
 
 public class LongestPalindromicSubstring {
+
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0 || s.length() == 1) return s;
 
