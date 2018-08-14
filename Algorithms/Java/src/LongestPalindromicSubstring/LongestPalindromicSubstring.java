@@ -1,3 +1,5 @@
+package src.LongestPalindromicSubstring;
+
 /**
  * Created by tongqi on 2017/4/20.
  * Email: tongqicode@126.com

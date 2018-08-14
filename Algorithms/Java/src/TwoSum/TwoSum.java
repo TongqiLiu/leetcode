@@ -1,3 +1,5 @@
+package src.TwoSum;
+
 import java.util.HashMap;
 
 /**
