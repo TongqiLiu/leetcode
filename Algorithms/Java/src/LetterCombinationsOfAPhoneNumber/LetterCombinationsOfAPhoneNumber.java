@@ -29,10 +29,9 @@ public class LetterCombinationsOfAPhoneNumber {
 
     public List<String> letterCombinations(String digits) {
         if (digits == null || digits.length() == 0) {
-            return null;
+            return list;
         }
 
-        List<String> list = new ArrayList<>();
         dfs("", 0, digits);
         return list;
     }
