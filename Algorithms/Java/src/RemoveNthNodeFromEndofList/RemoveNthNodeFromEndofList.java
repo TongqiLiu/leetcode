@@ -1,4 +1,4 @@
-package src.ReverseInteger;
+package src.RemoveNthNodeFromEndofList;
 
 import java.util.ArrayList;
 import java.util.List;
