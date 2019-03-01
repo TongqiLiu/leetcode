@@ -49,6 +49,6 @@ public class ImplementStrStr {
     }
 
     public static void main(String[] args) {
-        //strStr("mississippi", "issip");
+        strStr("mississippi", "issip");
     }
 }
