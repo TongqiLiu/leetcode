@@ -11,7 +11,7 @@ public class DivideTwoIntegers {
 
     public static int divide(int dividend, int divisor) {
         int sign = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
-        long number = Math.abs(dividend), div = Math.abs(divisor), ans = 0;
+        long number = Math.abs((long)dividend), div = Math.abs((long)divisor), ans = 0;
         while (number >= div) {
             long tmp = div, cnt = 1;
             while (tmp << 1 < number) {
@@ -22,5 +22,9 @@ public class DivideTwoIntegers {
             ans += cnt;
         }
         return ans * sign < Integer.MAX_VALUE ? (int)ans * sign : Integer.MAX_VALUE;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(divide(-2147483648,-1));
     }
 }
