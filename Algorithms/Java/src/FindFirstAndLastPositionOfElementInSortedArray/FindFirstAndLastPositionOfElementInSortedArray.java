@@ -8,6 +8,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
 
     /**
      * STL中的upper_bound和lower_bound源码实现
+     *
      * @param nums
      * @param target
      * @return
@@ -58,7 +59,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
 
     public static void main(String[] args) {
         int[] nums = {5, 7, 7, 8, 8, 10};
-        System.out.println(upperBound(nums, 8));
+        System.out.println(upperBound(nums, 10));
         System.out.println(lowerBound(nums, 6));
     }
 }
