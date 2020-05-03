@@ -22,7 +22,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 hashMap.put(s.charAt(i), i);
                 ans = Math.max(ans, len);
             } else {
-                ans = Math.max(len, ans);
                 l = hashMap.get(s.charAt(i)) + 1;
                 len = r - l + 1;
 

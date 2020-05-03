@@ -8,6 +8,7 @@ public class SearchInRotatedSortedArray {
 
     /**
      * 核心思路就是二分，复杂度O(logN)
+     * 将数组一分为二，如果中间的数小于最右边的数，则右半段是有序的，若中间数大于最右边数，则左半段是有序的
      *
      * @param nums
      * @param target
@@ -21,7 +22,7 @@ public class SearchInRotatedSortedArray {
         int left = 0, right = nums.length - 1;
 
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 return mid;
             }

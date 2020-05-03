@@ -30,7 +30,7 @@ public class SubstringwithConcatenationOfAllWords {
             return new ArrayList<>();
         }
         Map<String, Integer> counts = new HashMap<>();
-        for (final String word : words) {
+        for (String word : words) {
             counts.put(word, counts.getOrDefault(word, 0) + 1);
         }
         List<Integer> indexes = new ArrayList<>();
