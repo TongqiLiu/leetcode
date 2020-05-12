@@ -16,7 +16,6 @@ public class FactorCombinations {
             list.add(curVal);
             ans.add(new ArrayList<>(list));
             list.remove(list.size() - 1);
-            return;
         }
 
         for (int i = lastFactor; i <= (int)(Math.sqrt(curVal)); i++) {
