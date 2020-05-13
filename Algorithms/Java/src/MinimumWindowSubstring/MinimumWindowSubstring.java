@@ -62,6 +62,6 @@ public class MinimumWindowSubstring {
     }
 
     public static void main(String[] args) {
-        minWindow("ADOBECODEBANC", "ABC");
+        System.out.println(minWindow("ADOBECODEBANC", "ABC"));
     }
 }

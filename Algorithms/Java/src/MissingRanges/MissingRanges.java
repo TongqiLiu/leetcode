@@ -24,7 +24,7 @@ public class MissingRanges {
             if (left + 1 == nums[i]) {
                 ans.add(String.valueOf(left));
             } else if (left + 1 < nums[i]) {
-                ans.add(String.valueOf(left) + "->" + String.valueOf(nums[i] - 1));
+                ans.add(left + "->" + (nums[i] - 1));
             }
             left = (long)nums[i] + 1;
         }
@@ -32,7 +32,7 @@ public class MissingRanges {
         if (left == upper) {
             ans.add(String.valueOf(left));
         } else if (left < upper) {
-            ans.add(String.valueOf(left) + "->" + String.valueOf(upper));
+            ans.add(left + "->" + upper);
         }
         return ans;
     }
