@@ -43,7 +43,6 @@ public class PatternMatchingLCCI {
                 if (map.containsValue(s)) {
                     continue;
                 }
-
                 map.put(c, s);
                 if (patternMatching(pattern.substring(1), value.substring(i))) {
                     return true;
