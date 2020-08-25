@@ -23,7 +23,7 @@ public class IPtoCIDR {
         List<String> res = new ArrayList<>();
         long num = ipToLong(ip);
         int k = 0;
-        while ((num & (1 << k)) == 0) {
+        while (num > 0 && (num & (1 << k)) == 0) {
             k++;
         }
         long count = (1 << k);
