@@ -13,6 +13,14 @@ public class PyramidTransitionMatrix {
 
     private Map<String, List<Character>> map;
 
+    /**
+     * 题目地址：https://leetcode-cn.com/problems/pyramid-transition-matrix/
+     * dfs爆搜
+     *
+     * @param bottom
+     * @param allowed
+     * @return
+     */
     public boolean pyramidTransition(String bottom, List<String> allowed) {
         map = new HashMap<>();
         for (String allow : allowed) {
