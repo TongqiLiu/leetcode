@@ -10,10 +10,11 @@ import java.util.List;
  */
 public class CombinationSum {
 
-    List<List<Integer>> result = new ArrayList<>();
+    private List<List<Integer>> result = new ArrayList<>();
 
     /**
      * dfs爆搜即可，注意下list引用的问题
+     *
      * @param candidates
      * @param target
      * @param nowList
@@ -37,5 +38,10 @@ public class CombinationSum {
         Arrays.sort(candidates);
         dfs(candidates, target, new ArrayList<>(), 0);
         return result;
+    }
+
+    public static void main(String[] args) {
+        CombinationSum sum = new CombinationSum();
+        sum.combinationSum(new int[] {2, 3, 7}, 7);
     }
 }
