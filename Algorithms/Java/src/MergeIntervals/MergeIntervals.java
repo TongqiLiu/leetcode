@@ -11,8 +11,8 @@ import java.util.List;
 public class MergeIntervals {
 
     public static class Interval implements Comparable<Interval> {
-        int start;
-        int end;
+        public int start;
+        public int end;
 
         public Interval() {
         }
