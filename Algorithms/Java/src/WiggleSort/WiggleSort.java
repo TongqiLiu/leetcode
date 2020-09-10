@@ -1,5 +1,7 @@
 package src.WiggleSort;
 
+import java.util.Arrays;
+
 /**
  * @author mingqiao
  * @Date 2020/3/13
@@ -16,6 +18,24 @@ public class WiggleSort {
             if ((i % 2 == 0 && nums[i] > nums[i + 1]) || (i % 2 != 0 && nums[i] < nums[i + 1])) {
                 swap(nums, i, i + 1);
             }
+        }
+    }
+
+    /**
+     * 先排序，然后分奇偶坐标构造数组
+     *
+     * @param nums
+     */
+    public void wiggleSort1(int[] nums) {
+        int len = nums.length;
+        int[] tmp = Arrays.copyOf(nums, nums.length);
+        Arrays.sort(tmp);
+
+        int mid = (len & 1) == 1 ? len / 2 : len / 2 - 1;
+        int r = len - 1;
+        //System.out.println("r:" + tmp[r]);
+        for (int i = 0; i < len; i++) {
+            nums[i] = (i & 1) == 0 ? tmp[mid--] : tmp[r--];
         }
     }
 
