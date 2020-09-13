@@ -100,4 +100,41 @@ public class Trie {
         }
         return true;
     }
+
+    /**
+     * 搜索是否存在num个字符不同的word
+     *
+     * @param word
+     * @param i
+     * @param num
+     * @param root
+     * @return
+     */
+    public boolean searchDiffWord(String word, int i, int num, TrieNode root) {
+        if (word == null || word.length() == 0) {
+            return false;
+        }
+        if (num < 0) {
+            return false;
+        }
+        if (i == word.length()) {
+            return num == 0 && root.isEnd;
+        }
+
+        char c = word.charAt(i);
+        int index = c - 'a';
+        for (int j = 0; j < root.SIZE; j++) {
+            if (root.son[j] == null) {
+                continue;
+            }
+            if (index == j) {
+                if (searchDiffWord(word, i + 1, num, root.son[index])) {
+                    return true;
+                }
+            } else if (searchDiffWord(word, i + 1, num - 1, root.son[j])) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
