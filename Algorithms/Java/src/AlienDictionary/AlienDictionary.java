@@ -94,6 +94,7 @@ public class AlienDictionary {
      * 字典序可以通过图建边的方式展现，如果某字母字典序比另一字母小则加一条边，然后跑拓扑排序无环则表示为出现顺序矛盾
      * ，注意这题会存在一些未排序的节点也需要加进去，且如果存在多个子图未联通的情况下，多个子图间需要合并只需保证子图
      * 内部拓扑顺序正常即可
+     *
      * @param words
      * @return
      */
@@ -129,7 +130,7 @@ public class AlienDictionary {
             }
         }
 
-        if (!topoSort.sort(nums)) {
+        if (!topoSort.sort(nums) || topoSort.edges.length == 0) {
             return "";
         }
 
@@ -138,7 +139,8 @@ public class AlienDictionary {
         int[] dep = topoSort.dep;
         for (int i = 0; i < dep.length; i++) {
             Character ch = charMap.get(i);
-            depMap.put(dep[i], ch);
+            //Integer缓存了-128~127之间的数，故需要单独构造
+            depMap.put(new Integer(dep[i]), ch);
         }
         List<Entry<Integer, Character>> list = new ArrayList<>(depMap.entrySet());
         list.sort(Comparator.comparing(Entry::getKey));
