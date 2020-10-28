@@ -1,7 +1,5 @@
 package src.PalindromeLinkedList;
 
-import java.util.Objects;
-
 import src.A_Common_Package.ListNode;
 
 /**
@@ -23,11 +21,11 @@ public class PalindromeLinkedList {
         ListNode fast = head;
         ListNode slow = head;
         // 根据快慢指针，找到链表的中点
-        while (fast.next != null && fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
-        slow = reverse(slow.next);
+        slow = reverse(slow);
         while (slow != null) {
             if (head.val != slow.val) {
                 return false;
@@ -39,7 +37,7 @@ public class PalindromeLinkedList {
     }
 
     private ListNode reverse(ListNode head) {
-        if (head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode newHead = reverse(head.next);

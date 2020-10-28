@@ -10,11 +10,11 @@ public class LinkedListCycleII {
 
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
-            return new ListNode(-1);
+            return null;
         }
 
         ListNode slow = head, fast = head;
-        while (fast.next != null && fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
@@ -27,6 +27,6 @@ public class LinkedListCycleII {
                 return slow;
             }
         }
-        return new ListNode(-1);
+        return null;
     }
 }
