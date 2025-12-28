@@ -1,7 +1,11 @@
 package src.CloneGraph;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * @author tongqi
@@ -16,8 +20,25 @@ public class CloneGraph {
      * @return 克隆后的图的节点
      */
     public Node cloneGraph(Node node) {
-        // TODO: 实现克隆图的逻辑
-        return null;
+        if (node == null) {
+            return null;
+        }
+        Node newNode = new Node(node.val);
+        Map<Node, Node> visited = new HashMap<>();
+        visited.put(node, newNode);
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            for (Node neighbor : current.neighbors) {
+                if (!visited.containsKey(neighbor)) {
+                    visited.put(neighbor, new Node(neighbor.val));
+                    queue.add(neighbor);
+                }
+                visited.get(current).neighbors.add(visited.get(neighbor));
+            }
+        }   
+        return newNode;
     }
 
     /**
